@@ -2,5 +2,5 @@
   <x-slot:heading>
     Contact Page
   </x-slot:heading>
-  contact
+  <p>Hallow from contact page</p>
 </x-layout>

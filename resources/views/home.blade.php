@@ -3,5 +3,5 @@
     Home Page
   </x-slot:heading>
 
-  home
+  <p>Hallow from home page</p>
 </x-layout>

@@ -1,8 +1,8 @@
 <x-layout>
   <x-slot:heading>
-    <span class="font-semibold">Edit Job : </span><a href="/job/{{$job->id}}">{{$job->title}}</a>
+    <span class="font-semibold">Edit Job : </span><a href="/jobs/{{$job->id}}">{{$job->title}}</a>
   </x-slot:heading>
-<form method="post" action="/job/{{$job->id}}">
+<form method="post" action="/jobs/{{$job->id}}">
   @csrf
   @method('PATCH')
   <div class="space-y-12">
@@ -41,13 +41,13 @@
       <button form="delete_form" class="rounded-md px-3 py-2 text-sm rounded-m text-red-600 font-semibold hover:text-white hover:bg-red-700 focus-visible:outline-2 focus-visible:outline-offset-2 cursor-pointer">Delete</button>
     </div>
     <div class="self-end">
-      <a href="/job/{{$job->id}}" type="button" class="text-sm/6 font-semibold text-white">Cancel</a>
+      <a href="/jobs/{{$job->id}}" type="button" class="text-sm/6 font-semibold text-white">Cancel</a>
       <button type="submit" class="rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Save</button>
     </div>
   </div>
 </form>
 {{-- delete form --}}
-<form action="/job/{{$job->id}}" id="delete_form" method="POST">
+<form action="/jobs/{{$job->id}}" id="delete_form" method="POST">
   @csrf
   @method('DELETE')
 </form>

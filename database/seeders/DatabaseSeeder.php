@@ -20,6 +20,13 @@ class DatabaseSeeder extends Seeder
         User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
+            'password'=> '123465'
+        ]);
+
+        User::factory()->create([
+            'name' => 'ahmed',
+            'email' => 'ahmed9999@gmail.com',
+            'password' => '123456'
         ]);
         $this->call(JobSeeder::class);
     }

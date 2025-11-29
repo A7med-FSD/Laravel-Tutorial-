@@ -29,10 +29,20 @@
                         </div>
                     </div>
                     <div class="hidden md:block">
-                        <div class="ml-4 flex items-center md:ml-6">
-                            <x-nav-link href="/register" :active="request()->is('register')">Register</x-nav-link>
-                            <x-nav-link href="/login" :active="request()->is('login')">Log In</x-nav-link>
-                        </div>
+                        @guest
+                            <div class="ml-4 flex items-center md:ml-6">
+                                <x-nav-link href="/register" :active="request()->is('register')">Register</x-nav-link>
+                                <x-nav-link href="/login" :active="request()->is('login')">Log In</x-nav-link>
+                            </div>
+                        @endguest
+                        @auth
+                            <form action="/logout" method="post">
+                                @csrf
+                                <button class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white" type="submit">
+                                    Logout
+                                </button>
+                            </form>
+                        @endauth
                     </div>
                     <div class="-mr-2 flex md:hidden">
                         <!-- Mobile menu button -->

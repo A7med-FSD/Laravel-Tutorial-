@@ -13,5 +13,8 @@ Route::resource('jobs', JobController::class);
 Route::get('/register', [RegisterController::class,'create']);
 Route::post('/register', [RegisterController::class,'store']);
 
-Route::get('/login', [SessionController::class,'create']);
-Route::post('/login', [SessionController::class,'store']);
+Route::controller(SessionController::class)->group(function (){
+  Route::get('/login','create');
+  Route::post('/login','store');
+  Route::post('/logout', 'destroy');
+});

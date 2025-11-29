@@ -41,7 +41,7 @@
       <button form="delete_form" class="rounded-md px-3 py-2 text-sm rounded-m text-red-600 font-semibold hover:text-white hover:bg-red-700 focus-visible:outline-2 focus-visible:outline-offset-2 cursor-pointer">Delete</button>
     </div>
     <div class="self-end">
-      <a href="/jobs/{{$job->id}}" type="button" class="text-sm/6 font-semibold text-white">Cancel</a>
+      <a href="/jobs/{{$job->id}}" type="button" class="text-sm/6 font-semibold mr-2 text-white">Cancel</a>
       <button type="submit" class="rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Save</button>
     </div>
   </div>

@@ -2,7 +2,7 @@
   <x-slot:heading>
     Register
   </x-slot:heading>
-<form method="post" action="">
+<form method="post" action="/register">
   @csrf
   <div class="space-y-12">
     <div class="border-b border-white/10 pb-12">
@@ -17,27 +17,21 @@
         <x-form-field>
           <label for="email" class="block text-sm/6 font-medium text-white">Email</label>
           <div class="mt-2">
-            <div class="flex items-center rounded-md bg-white/5 pl-3 outline-1 -outline-offset-1 outline-white/10 focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-500">
-              <input id="email" type="email" name="email" class="block min-w-0 grow bg-transparent py-1.5 pr-3 pl-1 text-base text-white placeholder:text-gray-500 focus:outline-none sm:text-sm/6"/>
-            </div>
+            <x-form-input id="email" type="email" name="email"/>
           </div>
           <x-form-error name="email"/>
         </x-form-field>
         <x-form-field>
           <label for="password" class="block text-sm/6 font-medium text-white">Password</label>
           <div class="mt-2">
-            <div class="flex items-center rounded-md bg-white/5 pl-3 outline-1 -outline-offset-1 outline-white/10 focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-500">
-              <input id="password" type="password" name="password" class="block min-w-0 grow bg-transparent py-1.5 pr-3 pl-1 text-base text-white placeholder:text-gray-500 focus:outline-none sm:text-sm/6"/>
-            </div>
+            <x-form-input id="password" type="password" name="password"/>
           </div>
           <x-form-error name="password"/>
         </x-form-field>
         <x-form-field>
           <label for="password_confirmation" class="block text-sm/6 font-medium text-white">Confirm Password</label>
           <div class="mt-2">
-            <div class="flex items-center rounded-md bg-white/5 pl-3 outline-1 -outline-offset-1 outline-white/10 focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-500">
-              <input id="password_confirmation" type="password" name="password_confirmation" class="block min-w-0 grow bg-transparent py-1.5 pr-3 pl-1 text-base text-white placeholder:text-gray-500 focus:outline-none sm:text-sm/6"/>
-            </div>
+            <x-form-input id="password_confirmation" type="password" name="password_confirmation"/>
           </div>
           <x-form-error name="password_confirmation"/>
         </x-form-field>

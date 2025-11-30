@@ -32,8 +32,8 @@ class JobController extends Controller
             'salary' => request('salary'),
             'employer_id' => 1
         ]);
-
-        Mail::to($job->employer->user)->send(new JobMail($job)); //by default $job->employer->user->email 
+        $mail = new JobMail($job);
+        Mail::to($job->employer->user)->queue($mail->delay(10)); //by default $job->employer->user->email 
 
         return redirect('/jobs');
     }
